@@ -7,5 +7,11 @@ function FindProxyForURL(url, host) {
         return "PROXY 127.0.0.1:8080";
     }
 
+
+    if (dnsDomainIs(host, "scratch.mit.edu") || dnsDomainIs(host, "mit.edu")) {
+        return "DIRECT";
+    }
+
     return "DIRECT";
+
 }
